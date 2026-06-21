@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 简明指南与访问提醒</title>
+    <style>
+        /* reset & base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f7f6f3;
+            color: #1e1e1e;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a {
+            color: #b45a34;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color 0.2s, background 0.2s;
+        }
+        a:hover {
+            color: #853d22;
+            background: #f2e3da;
+        }
+
+        /* hero */
+        .hero {
+            background: linear-gradient(135deg, #1c1b1a 0%, #2d2a28 100%);
+            padding: 3.2rem 1.5rem 3rem;
+            text-align: center;
+            color: #f0ede9;
+            border-bottom: 4px solid #b45a34;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+        }
+        .hero p {
+            max-width: 660px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #d6cfc6;
+            line-height: 1.5;
+        }
+        .hero .tag {
+            display: inline-block;
+            margin-top: 1.2rem;
+            background: #b45a34;
+            padding: 0.35rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            color: #f5f1eb;
+            text-decoration: none;
+            background: #b45a34;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        /* container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* sections */
+        section {
+            padding: 2.8rem 0;
+        }
+        .section-title {
+            font-size: 1.7rem;
+            font-weight: 500;
+            margin-bottom: 1.3rem;
+            border-left: 5px solid #b45a34;
+            padding-left: 1rem;
+            color: #2f2c28;
+        }
+        .section-sub {
+            color: #4b463e;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            max-width: 780px;
+        }
+
+        /* advantage cards */
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1rem;
+        }
+        .adv-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+            border: 1px solid #eae7e1;
+            transition: box-shadow 0.25s, transform 0.2s;
+        }
+        .adv-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            transform: translateY(-3px);
+        }
+        .adv-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+            color: #2b2824;
+        }
+        .adv-card p {
+            color: #3f3b35;
+            font-size: 0.95rem;
+        }
+
+        /* description / guide */
+        .guide-block {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2rem;
+            margin: 0.5rem 0 0.8rem;
+            border: 1px solid #e5e0d9;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .guide-block p {
+            margin-bottom: 1rem;
+        }
+        .guide-block p:last-child {
+            margin-bottom: 0;
+        }
+        .guide-note {
+            background: #f4efe9;
+            border-left: 4px solid #b45a34;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        /* FAQ summary */
+        .faq-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .faq-item {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 1.2rem 1.6rem;
+            border: 1px solid #e7e2da;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #2b2824;
+            margin-bottom: 0.3rem;
+            font-size: 1.05rem;
+        }
+        .faq-item span {
+            color: #454039;
+            font-size: 0.95rem;
+        }
+
+        /* bottom links */
+        .bottom-links {
+            background: #f0ece5;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-top: 1px solid #dad4cb;
+        }
+        .bottom-links p {
+            font-size: 0.95rem;
+            color: #3d3831;
+            margin-bottom: 0.3rem;
+        }
+        .bottom-links a {
+            color: #8a4f2c;
+        }
+        .bottom-links a:hover {
+            color: #5d321b;
+        }
+        .bottom-sep {
+            display: inline-block;
+            margin: 0 0.6rem;
+            color: #b9b1a6;
+        }
+
+        /* responsive */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+                padding-left: 0.8rem;
+            }
+            .guide-block {
+                padding: 1.4rem 1.2rem;
+            }
+            .faq-item {
+                padding: 1rem 1.2rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero {
+                padding: 2.4rem 1rem 2rem;
+            }
+            .advantage-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero 区 -->
+<header class="hero">
+    <h1>爱游戏 · 简明指南</h1>
+    <p>一个从导航到体验的轻量级思路，帮助你快速理解 <a href="https://webs--ayx.com" style="color:#f0b490; text-decoration: underline;">爱游戏</a> 所呈现的信息结构。<br>没有复杂的门槛，只有清晰的访问提醒。</p>
+    <span class="tag">阅读时长约 3 分钟</span>
+</header>
+
+<!-- 优势区 -->
+<section>
+    <div class="container">
+        <h2 class="section-title">为什么先了解这些</h2>
+        <p class="section-sub">无论初次接触还是回头查看，熟悉几个基本特点都能让浏览更省心。</p>
+        <div class="advantage-grid">
+            <div class="adv-card">
+                <h3>简洁入口</h3>
+                <p>首页直接聚焦核心导航，没有过度广告或无关弹窗，减少干扰。</p>
+            </div>
+            <div class="adv-card">
+                <h3>分类清晰</h3>
+                <p>内容按模块组织，从新到旧、从热门到专题，逻辑比较直观。</p>
+            </div>
+            <div class="adv-card">
+                <h3>设备适应</h3>
+                <p>响应式布局照顾手机与桌面，不必频繁缩放或横竖切换。</p>
+            </div>
+            <div class="adv-card">
+                <h3>更新稳定</h3>
+                <p>信息维持周期性刷新，但不会频繁变动，适合日常查阅。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 说明区 —— 从简明指南和访问提醒的角度展开 -->
+<section style="background: #ffffff; padding-top: 2rem; padding-bottom: 2.8rem;">
+    <div class="container">
+        <h2 class="section-title">访问提醒与阅读建议</h2>
+        <div class="guide-block">
+            <p>很多朋友第一次来到 <a href="https://webs--ayx.com">爱游戏</a> 时，会好奇从哪里开始看比较顺手。我的建议是：先花一分钟浏览顶栏的大分类，了解整体范围，再根据兴趣点选一个板块深入。网站的信息排布偏向实用，没有太多冗余的装饰性页面。</p>
+            <p>另外，如果你用手机访问，注意页面加载后稍等片刻——部分模块的字体和卡片会做二次适配，这是正常现象。如果遇到加载缓慢，可以尝试切换网络环境或清理缓存。</p>
+            <div class="guide-note">
+                <strong>📌 一点小提醒：</strong> 网站偶尔会进行短时维护或调整链接结构，如果发现某个子页面无法正常打开，不妨等半小时左右再试。大多数临时性问题都能自行恢复。
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ 摘要 -->
+<section>
+    <div class="container">
+        <h2 class="section-title">快速问答摘要</h2>
+        <p class="section-sub">下面几个常见疑问可以帮助你更快确认一些细节。</p>
+        <div class="faq-summary">
+            <div class="faq-item">
+                <strong>需要注册或登录才能看内容吗？</strong>
+                <span>大部分浏览不需要账号，只有少数互动功能（如评论、收藏）才需注册。访客模式完全可用。</span>
+            </div>
+            <div class="faq-item">
+                <strong>网站主要面向哪些用户？</strong>
+                <span>没有严格的限定，不过内容偏重轻度叙事与信息整理，适合喜欢有条理阅读的人。</span>
+            </div>
+            <div class="faq-item">
+                <strong>有没有推荐的访问时段？</strong>
+                <span>没有硬性要求，但根据经验，工作日上午或周末下午服务器响应通常更快。</span>
+            </div>
+        </div>
+        <p style="margin-top: 1.4rem; font-size: 0.95rem; color: #4a443d;">如果还有其他疑问，可以直接在站内帮助页寻找更多说明。</p>
+    </div>
+</section>
+
+<!-- 底部链接区 -->
+<footer class="bottom-links">
+    <div class="container">
+        <p>更多相关信息请参考 <a href="https://webs--ayx.com">爱游戏</a> 首页 · 基于实际体验整理</p>
+        <p style="font-size: 0.85rem; color: #6f685e; margin-top: 0.6rem;">
+            <span>浏览提醒</span>
+            <span class="bottom-sep">|</span>
+            <span>内容仅供参考</span>
+            <span class="bottom-sep">|</span>
+            <span>无诱导表述</span>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
